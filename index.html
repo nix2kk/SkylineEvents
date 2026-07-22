@@ -528,6 +528,11 @@
         if (targetFile) window.location.href = targetFile;
       });
     });
+
+    const video = document.querySelector('.hero video');
+    if (video) {
+    video.play().catch(() => {});
+    }
   </script>
 
 </body>
