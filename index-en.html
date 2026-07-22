@@ -203,6 +203,12 @@
         const f = window.location.pathname.split('/').pop() || 'index.html';
         if (langMap[f]) window.location.href = langMap[f];
       });
-    });  </script>
+    });  
+
+      const video = document.querySelector('.hero video');
+    if (video) {
+    video.play().catch(() => {});
+    }
+  </script>
 </body>
 </html>
