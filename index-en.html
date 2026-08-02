@@ -79,15 +79,15 @@
 </head>
 <body>
   <nav id="navbar">
-    <a href="index-en.html" class="nav-logo">
+    <a href="/en/" class="nav-logo">
       <img src="skyline_logo_final.png" alt="Skyline Events">
     </a>
     <div class="nav-right">
       <ul class="nav-links">
-        <li><a href="quem-somos-en.html">About Us</a></li>
-        <li><a href="servicos-en.html">Services</a></li>
-        <li><a href="performance-en.html">Performance</a></li>
-        <li><a href="contactos-en.html">Contact</a></li>
+        <li><a href="/quem-somos/en/">About Us</a></li>
+        <li><a href="/servicos/en/">Services</a></li>
+        <li><a href="/performance/en/">Performance</a></li>
+        <li><a href="/contactos/en/">Contact</a></li>
       </ul>
       <div class="nav-socials">
         <a href="https://www.instagram.com/skyline.evt/" target="_blank" class="social-icon" aria-label="Instagram">
@@ -119,10 +119,10 @@
     </div>
   </nav>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="quem-somos-en.html">About Us</a>
-    <a href="servicos-en.html">Services</a>
-    <a href="performance-en.html">Performance</a>
-    <a href="contactos-en.html">Contact</a>
+    <a href="/quem-somos/en/">About Us</a>
+    <a href="/servicos/en/">Services</a>
+    <a href="/performance/en/">Performance</a>
+    <a href="/contactos/en/">Contact</a>
     <div class="mobile-lang">
       <a href="#" class="mobile-lang-btn" data-lang="pt">PT</a>
     </div>
@@ -151,22 +151,27 @@
     <div class="hero-content">
       <p class="hero-label">Skyline Events</p>
       <h1 class="hero-title">We create the perfect atmosphere<br>for every <em>occasion.</em></h1>
-      <a href="quem-somos-en.html" class="hero-btn">Learn More</a>
+      <a href="/quem-somos/en/" class="hero-btn">Learn More</a>
     </div>
   </section>
   <script>
     const langMap = {
-      'index.html':'index-en.html','quem-somos.html':'quem-somos-en.html',
-      'servicos.html':'servicos-en.html','performance.html':'performance-en.html',
-      'contactos.html':'contactos-en.html','index-en.html':'index.html',
-      'quem-somos-en.html':'quem-somos.html','servicos-en.html':'servicos.html',
-      'performance-en.html':'performance.html','contactos-en.html':'contactos.html',
+      '/': '/en/',
+      '/en/': '/',
+      '/quem-somos/': '/quem-somos/en/',
+      '/quem-somos/en/': '/quem-somos/',
+      '/servicos/': '/servicos/en/',
+      '/servicos/en/': '/servicos/',
+      '/performance/': '/performance/en/',
+      '/performance/en/': '/performance/',
+      '/contactos/': '/contactos/en/',
+      '/contactos/en/': '/contactos/',
     };
     const pageLang = document.documentElement.getAttribute('data-lang');
     const storedLang = localStorage.getItem('skyline-lang') || 'pt';
     if (storedLang !== pageLang) {
-      const currentFile = window.location.pathname.split('/').pop() || 'index.html';
-      const targetFile = langMap[currentFile];
+      const currentPath = window.location.pathname;
+      const targetFile = langMap[currentPath];
       if (targetFile) window.location.replace(targetFile);
     }
     const navbar = document.getElementById('navbar');
@@ -192,8 +197,8 @@
         opt.addEventListener('click', (e) => {
           e.preventDefault();
           localStorage.setItem('skyline-lang', opt.getAttribute('data-lang'));
-          const f = window.location.pathname.split('/').pop() || 'index.html';
-          if (langMap[f]) window.location.href = langMap[f];
+          const currentPath = window.location.pathname;
+          if (langMap[currentPath]) window.location.href = langMap[currentPath];
         });
       });
     }
@@ -201,8 +206,8 @@
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         localStorage.setItem('skyline-lang', btn.getAttribute('data-lang'));
-        const f = window.location.pathname.split('/').pop() || 'index.html';
-        if (langMap[f]) window.location.href = langMap[f];
+        const currentPath = window.location.pathname;
+        if (langMap[currentPath]) window.location.href = langMap[currentPath];
       });
     });  
 
