@@ -612,13 +612,13 @@
 </head>
 <body>
   <nav id="navbar">
-    <a href="index-en.html" class="nav-logo"><img src="skyline_logo_final.png" alt="Skyline Events"></a>
+    <a href="/en/" class="nav-logo"><img src="skyline_logo_final.png" alt="Skyline Events"></a>
     <div class="nav-right">
       <ul class="nav-links">
-        <li><a href="quem-somos-en.html">About Us</a></li>
-        <li><a href="servicos-en.html">Services</a></li>
-        <li><a href="performance-en.html">Performance</a></li>
-        <li><a href="contactos-en.html">Contact</a></li>
+        <li><a href="/quem-somos/en/">About Us</a></li>
+        <li><a href="/servicos/en/">Services</a></li>
+        <li><a href="/performance/en/">Performance</a></li>
+        <li><a href="/contactos/en/">Contact</a></li>
       </ul>
       <div class="nav-socials">
         <a href="https://www.instagram.com/skyline.evt/" target="_blank" class="social-icon" aria-label="Instagram">
@@ -643,10 +643,10 @@
     </div>
   </nav>
   <div class="mobile-menu" id="mobileMenu">
-        <a href="quem-somos-en.html">About Us</a>
-    <a href="servicos-en.html">Services</a>
-    <a href="performance-en.html">Performance</a>
-    <a href="contactos-en.html">Contact</a>
+        <a href="/quem-somos/en/">About Us</a>
+    <a href="/servicos/en/">Services</a>
+    <a href="/performance/en/">Performance</a>
+    <a href="/contactos/en/">Contact</a>
     <div class="mobile-lang"><a href="#" class="mobile-lang-btn" data-lang="pt">PT</a></div>
     <div class="mobile-menu-socials">
       <a href="https://www.instagram.com/skyline.evt/" target="_blank" aria-label="Instagram">
@@ -726,21 +726,63 @@
   <section class="cta-wrap">
     <span class="section-label">Next step</span>
     <h2 class="section-title">Discover our<br><em>Performance</em></h2>
-    <a href="performance-en.html" class="cta-btn">View Performance</a>
+    <a href="/performance/en/" class="cta-btn">View Performance</a>
   </section>
   <script>
-    const langMap={'index.html':'index-en.html','quem-somos.html':'quem-somos-en.html','servicos.html':'servicos-en.html','performance.html':'performance-en.html','contactos.html':'contactos-en.html','index-en.html':'index.html','quem-somos-en.html':'quem-somos.html','servicos-en.html':'servicos.html','performance-en.html':'performance.html','contactos-en.html':'contactos.html'};
-    const pageLang=document.documentElement.getAttribute('data-lang');
-    const storedLang=localStorage.getItem('skyline-lang')||'pt';
-    if(storedLang!==pageLang){const f=window.location.pathname.split('/').pop()||'index.html';if(langMap[f])window.location.replace(langMap[f]);}
-    const navbar=document.getElementById('navbar');
-    if(navbar)window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>50));
-    const hamburger=document.getElementById('hamburger');
-    const mobileMenu=document.getElementById('mobileMenu');
-    if(hamburger){hamburger.addEventListener('click',()=>{hamburger.classList.toggle('active');mobileMenu.classList.toggle('open');document.body.style.overflow=mobileMenu.classList.contains('open')?'hidden':'';});document.querySelectorAll('.mobile-menu a').forEach(l=>l.addEventListener('click',()=>{hamburger.classList.remove('active');mobileMenu.classList.remove('open');document.body.style.overflow='';}));}
-    const langBtn=document.getElementById('langBtn');
-    const langDropdown=document.getElementById('langDropdown');
-    if(langBtn){langBtn.addEventListener('click',(e)=>{e.stopPropagation();langDropdown.classList.toggle('open');});document.addEventListener('click',()=>langDropdown.classList.remove('open'));document.querySelectorAll('.lang-option').forEach(opt=>{opt.addEventListener('click',(e)=>{e.preventDefault();localStorage.setItem('skyline-lang',opt.getAttribute('data-lang'));const f=window.location.pathname.split('/').pop()||'index.html';if(langMap[f])window.location.href=langMap[f];});});}
-    document.querySelectorAll('.mobile-lang-btn').forEach(btn=>{btn.addEventListener('click',(e)=>{e.preventDefault();localStorage.setItem('skyline-lang',btn.getAttribute('data-lang'));const f=window.location.pathname.split('/').pop()||'index.html';if(langMap[f])window.location.href=langMap[f];});});</script>
+    const langMap = {
+  '/': '/en/',
+  '/en/': '/',
+  '/quem-somos/': '/quem-somos/en/',
+  '/quem-somos/en/': '/quem-somos/',
+  '/servicos/': '/servicos/en/',
+  '/servicos/en/': '/servicos/',
+  '/performance/': '/performance/en/',
+  '/performance/en/': '/performance/',
+  '/contactos/': '/contactos/en/',
+  '/contactos/en/': '/contactos/',
+};
+const pageLang = document.documentElement.getAttribute('data-lang');
+const storedLang = localStorage.getItem('skyline-lang') || 'pt';
+if (storedLang !== pageLang) {
+  const currentPath = window.location.pathname;
+  const targetFile = langMap[currentPath];
+  if (targetFile) window.location.replace(targetFile);
+}
+const navbar = document.getElementById('navbar');
+if (navbar) window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 50));
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+if (hamburger) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+  document.querySelectorAll('.mobile-menu a').forEach(l => l.addEventListener('click', () => {
+    hamburger.classList.remove('active'); mobileMenu.classList.remove('open'); document.body.style.overflow = '';
+  }));
+}
+const langBtn = document.getElementById('langBtn');
+const langDropdown = document.getElementById('langDropdown');
+if (langBtn) {
+  langBtn.addEventListener('click', (e) => { e.stopPropagation(); langDropdown.classList.toggle('open'); });
+  document.addEventListener('click', () => langDropdown.classList.remove('open'));
+  document.querySelectorAll('.lang-option').forEach(opt => {
+    opt.addEventListener('click', (e) => {
+      e.preventDefault();
+      localStorage.setItem('skyline-lang', opt.getAttribute('data-lang'));
+      const currentPath = window.location.pathname;
+      if (langMap[currentPath]) window.location.href = langMap[currentPath];
+    });
+  });
+}
+document.querySelectorAll('.mobile-lang-btn').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    localStorage.setItem('skyline-lang', btn.getAttribute('data-lang'));
+    const currentPath = window.location.pathname;
+    if (langMap[currentPath]) window.location.href = langMap[currentPath];
+  });
+});</script>
 </body>
 </html>
