@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Português -->
+  <url>
+    <loc>https://skylineevents.pt/</loc>
+  </url>
+
+  <url>
+    <loc>https://skylineevents.pt/quem-somos.html</loc>
+  </url>
+
+  <url>
+    <loc>https://skylineevents.pt/servicos.html</loc>
+  </url>
+
+  <url>
+    <loc>https://skylineevents.pt/performance.html</loc>
+  </url>
+
+  <url>
+    <loc>https://skylineevents.pt/contactos.html</loc>
+  </url>
+
+  <!-- English -->
+  <url>
+    <loc>https://skylineevents.pt/index-en.html</loc>
+  </url>
+
+  <url>
+    <loc>https://skylineevents.pt/quem-somos-en.html</loc>
+  </url>
+
+  <url>
+    <loc>https://skylineevents.pt/servicos-en.html</loc>
+  </url>
+
+  <url>
+    <loc>https://skylineevents.pt/performance-en.html</loc>
+  </url>
+
+  <url>
+    <loc>https://skylineevents.pt/contactos-en.html</loc>
+  </url>
+
+</urlset>
