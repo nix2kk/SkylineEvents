@@ -576,15 +576,15 @@
 
   <!-- NAVBAR -->
   <nav id="navbar">
-    <a href="index.html" class="nav-logo">
+    <a href="/" class="nav-logo">
       <img src="skyline_logo_final.png" alt="Skyline Events">
     </a>
     <div class="nav-right">
       <ul class="nav-links">
-        <li><a href="quem-somos.html">Quem Somos</a></li>
-        <li><a href="servicos.html">Serviços</a></li>
-        <li><a href="performance.html">Performance</a></li>
-        <li><a href="contactos.html">Contactos</a></li>
+        <li><a href="/quem-somos/">Quem Somos</a></li>
+        <li><a href="/servicos/">Serviços</a></li>
+        <li><a href="/performance/">Performance</a></li>
+        <li><a href="/contactos/">Contactos</a></li>
       </ul>
       <div class="nav-socials">
         <a href="https://www.instagram.com/skyline.evt/" target="_blank" class="social-icon" aria-label="Instagram">
@@ -619,10 +619,10 @@
 
   <!-- MENU MOBILE -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="quem-somos.html">Quem Somos</a>
-    <a href="servicos.html">Serviços</a>
-    <a href="performance.html">Performance</a>
-    <a href="contactos.html">Contactos</a>
+    <a href="/quem-somos/">Quem Somos</a>
+    <a href="/servicos/">Serviços</a>
+    <a href="/performance/">Performance</a>
+    <a href="/contactos/">Contactos</a>
     <div class="mobile-lang">
       <a href="#" class="mobile-lang-btn" data-lang="en">ENG</a>
     </div>
@@ -716,84 +716,65 @@
   <section class="cta-wrap">
     <span class="section-label">O próximo passo</span>
     <h2 class="section-title">Fale connosco e criamos<br>algo <em>memorável</em></h2>
-    <a href="contactos.html" class="cta-btn">Contactar</a>
+    <a href="/contactos/" class="cta-btn">Contactar</a>
   </section>
 
   <script>
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 50);
-    });
-
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      mobileMenu.classList.toggle('open');
-      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-    });
-
-    document.querySelectorAll('.mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
-
-
-    // Language persistence
     const langMap = {
-      'index.html': 'index-en.html',
-      'quem-somos.html': 'quem-somos-en.html',
-      'servicos.html': 'servicos-en.html',
-      'performance.html': 'performance-en.html',
-      'contactos.html': 'contactos-en.html',
-      'index-en.html': 'index.html',
-      'quem-somos-en.html': 'quem-somos.html',
-      'servicos-en.html': 'servicos.html',
-      'performance-en.html': 'performance.html',
-      'contactos-en.html': 'contactos.html',
-    };
-    const pageLang = document.documentElement.getAttribute('data-lang');
-    const storedLang = localStorage.getItem('skyline-lang') || 'pt';
-    if (storedLang !== pageLang) {
-      const currentFile = window.location.pathname.split('/').pop() || 'index.html';
-      const targetFile = langMap[currentFile];
-      if (targetFile) window.location.replace(targetFile);
-    }
-    // Lang switcher
-    const langBtn = document.getElementById('langBtn');
-    const langDropdown = document.getElementById('langDropdown');
-    if (langBtn) {
-      langBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        langDropdown.classList.toggle('open');
-      });
-      document.addEventListener('click', () => langDropdown.classList.remove('open'));
-      document.querySelectorAll('.lang-option').forEach(opt => {
-        opt.addEventListener('click', (e) => {
-          e.preventDefault();
-          const newLang = opt.getAttribute('data-lang');
-          localStorage.setItem('skyline-lang', newLang);
-          const currentFile = window.location.pathname.split('/').pop() || 'index.html';
-          const targetFile = langMap[currentFile];
-          if (targetFile) window.location.href = targetFile;
-        });
-      });
-    }
-    // Mobile lang
-    document.querySelectorAll('.mobile-lang-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const newLang = btn.getAttribute('data-lang');
-        localStorage.setItem('skyline-lang', newLang);
-        const currentFile = window.location.pathname.split('/').pop() || 'index.html';
-        const targetFile = langMap[currentFile];
-        if (targetFile) window.location.href = targetFile;
-      });
+  '/': '/en/',
+  '/en/': '/',
+  '/quem-somos/': '/quem-somos/en/',
+  '/quem-somos/en/': '/quem-somos/',
+  '/servicos/': '/servicos/en/',
+  '/servicos/en/': '/servicos/',
+  '/performance/': '/performance/en/',
+  '/performance/en/': '/performance/',
+  '/contactos/': '/contactos/en/',
+  '/contactos/en/': '/contactos/',
+};
+const pageLang = document.documentElement.getAttribute('data-lang');
+const storedLang = localStorage.getItem('skyline-lang') || 'pt';
+if (storedLang !== pageLang) {
+  const currentPath = window.location.pathname;
+  const targetFile = langMap[currentPath];
+  if (targetFile) window.location.replace(targetFile);
+}
+const navbar = document.getElementById('navbar');
+if (navbar) window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 50));
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+if (hamburger) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+  document.querySelectorAll('.mobile-menu a').forEach(l => l.addEventListener('click', () => {
+    hamburger.classList.remove('active'); mobileMenu.classList.remove('open'); document.body.style.overflow = '';
+  }));
+}
+const langBtn = document.getElementById('langBtn');
+const langDropdown = document.getElementById('langDropdown');
+if (langBtn) {
+  langBtn.addEventListener('click', (e) => { e.stopPropagation(); langDropdown.classList.toggle('open'); });
+  document.addEventListener('click', () => langDropdown.classList.remove('open'));
+  document.querySelectorAll('.lang-option').forEach(opt => {
+    opt.addEventListener('click', (e) => {
+      e.preventDefault();
+      localStorage.setItem('skyline-lang', opt.getAttribute('data-lang'));
+      const currentPath = window.location.pathname;
+      if (langMap[currentPath]) window.location.href = langMap[currentPath];
     });
+  });
+}
+document.querySelectorAll('.mobile-lang-btn').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    localStorage.setItem('skyline-lang', btn.getAttribute('data-lang'));
+    const currentPath = window.location.pathname;
+    if (langMap[currentPath]) window.location.href = langMap[currentPath];
+  });
+});
   </script>
 
 </body>
