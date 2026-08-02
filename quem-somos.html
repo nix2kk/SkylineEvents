@@ -567,16 +567,16 @@
 
   <!-- NAVBAR -->
   <nav id="navbar">
-    <a href="index.html" class="nav-logo">
+    <a href="/" class="nav-logo">
       <img src="skyline_logo_final.png" alt="Skyline Events">
     </a>
 
     <div class="nav-right">
       <ul class="nav-links">
-        <li><a href="quem-somos.html">Quem Somos</a></li>
-        <li><a href="servicos.html">Serviços</a></li>
-        <li><a href="performance.html">Performance</a></li>
-        <li><a href="contactos.html">Contactos</a></li>
+        <li><a href="/quem-somos/">Quem Somos</a></li>
+        <li><a href="/servicos/">Serviços</a></li>
+        <li><a href="/performance/">Performance</a></li>
+        <li><a href="/contactos/">Contactos</a></li>
       </ul>
 
       <div class="nav-socials">
@@ -618,10 +618,10 @@
 
   <!-- MENU MOBILE OVERLAY -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="quem-somos.html" class="mobile-link">Quem Somos</a>
-    <a href="servicos.html" class="mobile-link">Serviços</a>
-    <a href="performance.html" class="mobile-link">Performance</a>
-    <a href="contactos.html" class="mobile-link">Contactos</a>
+    <a href="/quem-somos/" class="mobile-link">Quem Somos</a>
+    <a href="/servicos/" class="mobile-link">Serviços</a>
+    <a href="/performance/" class="mobile-link">Performance</a>
+    <a href="/contactos/" class="mobile-link">Contactos</a>
     <div class="mobile-lang">
       <a href="#" class="mobile-lang-btn" data-lang="en">ENG</a>
     </div>
@@ -717,7 +717,7 @@
   <section class="cta-wrap">
     <span class="section-label">O próximo passo</span>
     <h2 class="section-title">Conheça os nossos<br><em>Serviços</em></h2>
-    <a href="servicos.html" class="cta-btn">Ver Serviços</a>
+    <a href="/servicos/" class="cta-btn">Ver Serviços</a>
   </section>
 
   <script>
@@ -749,22 +749,22 @@
 
     // Language persistence
     const langMap = {
-      'index.html': 'index-en.html',
-      'quem-somos.html': 'quem-somos-en.html',
-      'servicos.html': 'servicos-en.html',
-      'performance.html': 'performance-en.html',
-      'contactos.html': 'contactos-en.html',
-      'index-en.html': 'index.html',
-      'quem-somos-en.html': 'quem-somos.html',
-      'servicos-en.html': 'servicos.html',
-      'performance-en.html': 'performance.html',
-      'contactos-en.html': 'contactos.html',
+      '/': '/en/',
+      '/en/': '/',
+      '/quem-somos/': '/quem-somos/en/',
+      '/quem-somos/en/': '/quem-somos/',
+      '/servicos/': '/servicos/en/',
+      '/servicos/en/': '/servicos/',
+      '/performance/': '/performance/en/',
+      '/performance/en/': '/performance/',
+      '/contactos/': '/contactos/en/',
+      '/contactos/en/': '/contactos/',
     };
     const pageLang = document.documentElement.getAttribute('data-lang');
     const storedLang = localStorage.getItem('skyline-lang') || 'pt';
     if (storedLang !== pageLang) {
-      const currentFile = window.location.pathname.split('/').pop() || 'index.html';
-      const targetFile = langMap[currentFile];
+      const currentPath = window.location.pathname;
+      const targetFile = langMap[currentPath];
       if (targetFile) window.location.replace(targetFile);
     }
     // Lang switcher
@@ -781,9 +781,9 @@
           e.preventDefault();
           const newLang = opt.getAttribute('data-lang');
           localStorage.setItem('skyline-lang', newLang);
-          const currentFile = window.location.pathname.split('/').pop() || 'index.html';
-          const targetFile = langMap[currentFile];
-          if (targetFile) window.location.href = targetFile;
+         const currentPath = window.location.pathname;
+         const targetFile = langMap[currentPath];
+        if (targetFile) window.location.href = targetFile;
         });
       });
     }
@@ -793,8 +793,8 @@
         e.preventDefault();
         const newLang = btn.getAttribute('data-lang');
         localStorage.setItem('skyline-lang', newLang);
-        const currentFile = window.location.pathname.split('/').pop() || 'index.html';
-        const targetFile = langMap[currentFile];
+        const currentPath = window.location.pathname;
+        const targetFile = langMap[currentPath];
         if (targetFile) window.location.href = targetFile;
       });
     });
