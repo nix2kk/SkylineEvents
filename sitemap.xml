@@ -1,46 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <!-- Português -->
   <url>
     <loc>https://skylineevents.pt/</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://skylineevents.pt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://skylineevents.pt/en/"/>
   </url>
 
   <url>
     <loc>https://skylineevents.pt/quem-somos/</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://skylineevents.pt/quem-somos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://skylineevents.pt/quem-somos/en/"/>
   </url>
 
   <url>
     <loc>https://skylineevents.pt/servicos/</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://skylineevents.pt/servicos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://skylineevents.pt/servicos/en/"/>
   </url>
 
   <url>
     <loc>https://skylineevents.pt/performance/</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://skylineevents.pt/performance/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://skylineevents.pt/performance/en/"/>
   </url>
 
   <url>
     <loc>https://skylineevents.pt/contactos/</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://skylineevents.pt/contactos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://skylineevents.pt/contactos/en/"/>
   </url>
 
   <!-- English -->
   <url>
     <loc>https://skylineevents.pt/en/</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://skylineevents.pt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://skylineevents.pt/en/"/>
   </url>
 
   <url>
     <loc>https://skylineevents.pt/quem-somos/en/</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://skylineevents.pt/quem-somos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://skylineevents.pt/quem-somos/en/"/>
   </url>
 
   <url>
     <loc>https://skylineevents.pt/servicos/en/</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://skylineevents.pt/servicos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://skylineevents.pt/servicos/en/"/>
   </url>
 
   <url>
     <loc>https://skylineevents.pt/performance/en/</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://skylineevents.pt/performance/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://skylineevents.pt/performance/en/"/>
   </url>
 
   <url>
     <loc>https://skylineevents.pt/contactos/en/</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://skylineevents.pt/contactos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://skylineevents.pt/contactos/en/"/>
   </url>
 
 </urlset>
